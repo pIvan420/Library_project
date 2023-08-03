@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="926e271d-5215-4177-bba5-ad572620bd0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/config/MySpringMvcDispatcherServletInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/config/SpringConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/database.properties.origin" afterDir="false" />
+    <list default="true" id="926e271d-5215-4177-bba5-ad572620bd0b" name="Changes" comment="Внес базовую конфигурацию проекта.&#10;&#10;Подключил все нужные фреймворки в pom.xml,&#10;создал необходимые директории, настроил файлы конфигурации,&#10;подключил БД и удаленный сервер">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/controllers/BooksController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/controllers/PeopleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/models/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/models/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0f4456c2-ae1e-427c-a6d3-b72f3a005860.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0f4456c2-ae1e-427c-a6d3-b72f3a005860.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +27,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2TUbzNJXLbpP8ZHschmSprxdRKg" />
@@ -155,11 +157,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1691100870391</updated>
-      <workItem from="1691100872961" duration="2164000" />
+      <workItem from="1691100872961" duration="5317000" />
     </task>
+    <task id="LOCAL-00001" summary="Внес базовую конфигурацию проекта.&#10;&#10;Подключил все нужные фреймворки в pom.xml,&#10;создал необходимые директории, настроил файлы конфигурации,&#10;подключил БД и удаленный сервер">
+      <option name="closed" value="true" />
+      <created>1691103334449</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1691103334449</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Внес базовую конфигурацию проекта.&#10;&#10;Подключил все нужные фреймворки в pom.xml,&#10;создал необходимые директории, настроил файлы конфигурации,&#10;подключил БД и удаленный сервер" />
+    <option name="LAST_COMMIT_MESSAGE" value="Внес базовую конфигурацию проекта.&#10;&#10;Подключил все нужные фреймворки в pom.xml,&#10;создал необходимые директории, настроил файлы конфигурации,&#10;подключил БД и удаленный сервер" />
   </component>
 </project>
