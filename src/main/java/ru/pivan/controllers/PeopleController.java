@@ -28,12 +28,14 @@ public class PeopleController {
     @GetMapping() // отправляется запрос на страницу с пользователями
     public String index(Model model){
         model.addAttribute("people", personDAO.index());
+        System.out.println("2");
         return "people/index";
     }
 
     @GetMapping("/{id}") // отправляется запрос на страницу с пользователем
-    public String show(Model model, @PathVariable("id") int id){
+    public String show(@PathVariable("id") int id, Model model){
         model.addAttribute("person", personDAO.show(id));
+        model.addAttribute("books", personDAO.get_books(id));
         return "people/show";
     }
 
@@ -65,7 +67,7 @@ public class PeopleController {
                          BindingResult bindingResult, @PathVariable("id") int id){
         personValidator.validate(person, bindingResult);
         if(bindingResult.hasErrors()){
-            return "people/new";
+            return "people/edit";
         }
         personDAO.update(id, person);
         return "redirect:/people";

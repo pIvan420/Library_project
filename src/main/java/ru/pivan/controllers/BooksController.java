@@ -28,8 +28,9 @@ public class BooksController {
     }
 
     @GetMapping("/{id}") // отправляется запрос на страницу с книгой
-    public String show(Model model, @PathVariable("id") int id){
+    public String show(@PathVariable("id") int id, Model model){
         model.addAttribute("book", bookDAO.show(id));
+        model.addAttribute("reader", bookDAO.get_reader(id));
         return "books/show";
     }
 
@@ -59,7 +60,7 @@ public class BooksController {
     public String update(@ModelAttribute("book") @Valid Book book,
                          BindingResult bindingResult, @PathVariable("id") int id){
         if(bindingResult.hasErrors()){
-            return "books/new";
+            return "books/edit";
         }
         bookDAO.update(id, book);
         return "redirect:/books";

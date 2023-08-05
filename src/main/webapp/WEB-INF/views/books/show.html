@@ -11,6 +11,10 @@
 <p th:text="${book.getAuthor()}">VALUE</p>
 <p th:text="${book.getPublish_year()}">VALUE</p>
 
+<p>Кто взял книгу:</p>
+<p th:if="${reader}" th:text="${reader.full_name}"></p>
+<p th:unless="${reader}">Эта книга свободна</p>
+
 <a th:href="@{/books/{id}/edit(id=${book.getId()})}">Изменить информацию о книге</a>
 
 <form th:method="DELETE" th:action="@{/books/{id}(id=${book.getId()})}">

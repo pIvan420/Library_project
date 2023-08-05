@@ -5,9 +5,9 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import ru.pivan.models.Book;
+import ru.pivan.models.Person;
 
 import java.util.List;
-import java.util.Optional;
 
 @Component
 public class BookDAO {
@@ -19,12 +19,12 @@ public class BookDAO {
     }
 
     public List<Book> index(){
-        return jdbcTemplate.query("SELECT * FROM Book", new BeanPropertyRowMapper<>(Book.class));
+        return jdbcTemplate.query("SELECT id, name, author, publish_year FROM Book", new BeanPropertyRowMapper<>(Book.class));
     }
 
-    public Optional<Book> show(int id){
-        return jdbcTemplate.query("SELECT * FROM Book WHERE id=?", new Object[]{id},
-                new BeanPropertyRowMapper<>(Book.class)).stream().findAny();
+    public Book show(int id){
+        return jdbcTemplate.query("SELECT id, name, author, publish_year FROM Book WHERE id=?", new Object[]{id},
+                new BeanPropertyRowMapper<>(Book.class)).stream().findAny().orElse(null);
     }
 
     public void save(Book book){
@@ -39,5 +39,11 @@ public class BookDAO {
 
     public void delete(int id){
         jdbcTemplate.update("DELETE FROM Book WHERE id=?", id);
+    }
+
+    public Person get_reader(int id){
+        return jdbcTemplate.query("SELECT full_name FROM Person join Book on " +
+                "Person.id = Book.person_id WHERE Book.id=?", new Object[]{id},
+                new BeanPropertyRowMapper<>(Person.class)).stream().findAny().orElse(null);
     }
 }

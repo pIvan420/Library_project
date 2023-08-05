@@ -9,16 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="926e271d-5215-4177-bba5-ad572620bd0b" name="Changes" comment="Создал файлы контроллера и моделей&#10;&#10;Создал в БД нужные таблицы, прописал в моделях поля и методы, &#10;осталось только аннотации необходимые добавить">
+    <list default="true" id="926e271d-5215-4177-bba5-ad572620bd0b" name="Changes" comment="Дописал представление для Book + подключил кириллицу">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0f4456c2-ae1e-427c-a6d3-b72f3a005860.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0f4456c2-ae1e-427c-a6d3-b72f3a005860.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0f4456c2-ae1e-427c-a6d3-b72f3a005860/storage_v2/_src_/database/library.uyToCQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0f4456c2-ae1e-427c-a6d3-b72f3a005860/storage_v2/_src_/database/library.uyToCQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/config/MySpringMvcDispatcherServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/config/MySpringMvcDispatcherServletInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/controllers/BooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/controllers/BooksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/controllers/PeopleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/dao/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/dao/BookDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/dao/PersonDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/util/PersonValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/util/PersonValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/new.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,6 +77,11 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ru.pivan.config" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Tomcat 10.1.11" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.11" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
@@ -194,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691106554439</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Дописал представление для Book + подключил кириллицу">
+      <option name="closed" value="true" />
+      <created>1691236968706</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1691236968706</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +217,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Внес базовую конфигурацию проекта.&#10;&#10;Подключил все нужные фреймворки в pom.xml,&#10;создал необходимые директории, настроил файлы конфигурации,&#10;подключил БД и удаленный сервер" />
     <MESSAGE value="Создал файлы контроллера и моделей&#10;&#10;Создал в БД нужные таблицы, прописал в моделях поля и методы, &#10;осталось только аннотации необходимые добавить" />
-    <option name="LAST_COMMIT_MESSAGE" value="Создал файлы контроллера и моделей&#10;&#10;Создал в БД нужные таблицы, прописал в моделях поля и методы, &#10;осталось только аннотации необходимые добавить" />
+    <MESSAGE value="Дописал представление для Book + подключил кириллицу" />
+    <option name="LAST_COMMIT_MESSAGE" value="Дописал представление для Book + подключил кириллицу" />
   </component>
 </project>

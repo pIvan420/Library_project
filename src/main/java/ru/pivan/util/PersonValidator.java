@@ -24,9 +24,9 @@ public class PersonValidator implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
         Person person = (Person) target;
-        // todo прописать валидацию + некорректно работает show + пока не получилось прописать паттерн у полей +
-        // todo если пишу что то вместо int, то некрасивая ошибка + надо узнать, где писать такие todo, потому шо некрасиво в коде
-
+        if(personDAO.show(person.getFull_name()) != null){
+            errors.rejectValue("full_name", "", "Это имя уже занято");
+        }
     }
 }
 
