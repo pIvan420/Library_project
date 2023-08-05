@@ -8,7 +8,7 @@ public class Person {
 
     @NotEmpty(message = "Имя не может быть пустым")
     //Фамилия Имя Отчество
-    @Pattern(regexp = "[А-Я]\\w+, [А-Я]\\w+, [А-Я]\\w+")
+    //@Pattern(regexp = "[А-Я]\\w+, [А-Я]\\w+, [А-Я]\\w+")
     private String full_name;
 
     @Min(value = 1910, message = "Год не может быть меньше 1910")
