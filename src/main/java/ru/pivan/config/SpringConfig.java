@@ -17,6 +17,7 @@ import org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 
 import javax.sql.DataSource;
+import java.util.Objects;
 
 @Configuration
 @ComponentScan("ru.pivan")
@@ -62,10 +63,10 @@ public class SpringConfig implements WebMvcConfigurer {
     public DataSource dataSource(){ //подключаю БД
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
-        dataSource.setDriverClassName("db.driver");
-        dataSource.setUrl("db.url");
-        dataSource.setUsername("db.login");
-        dataSource.setPassword("db.password");
+        dataSource.setDriverClassName(Objects.requireNonNull(environment.getProperty("db.driver")));
+        dataSource.setUrl(environment.getProperty("db.url"));
+        dataSource.setUsername(environment.getProperty("db.login"));
+        dataSource.setPassword(environment.getProperty("db.password"));
 
         return dataSource;
     }
