@@ -6,10 +6,9 @@ import jakarta.validation.constraints.*;
 public class Person {
     private int id;
 
-    //Фамилия Имя Отчество
     @NotEmpty(message = "Имя не может быть пустым")
-    //@Pattern()
-    // todo прописать паттерн + написать аннотацию уникальности
+    //Фамилия Имя Отчество
+    @Pattern(regexp = "[А-Я]\\w+, [А-Я]\\w+, [А-Я]\\w+")
     private String full_name;
 
     @Min(value = 1910, message = "Год не может быть меньше 1910")

@@ -1,17 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Library_project:war exploded" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="926e271d-5215-4177-bba5-ad572620bd0b" name="Changes" comment="Внес базовую конфигурацию проекта.&#10;&#10;Подключил все нужные фреймворки в pom.xml,&#10;создал необходимые директории, настроил файлы конфигурации,&#10;подключил БД и удаленный сервер">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/controllers/BooksController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/controllers/PeopleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/models/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/models/Person.java" afterDir="false" />
+    <list default="true" id="926e271d-5215-4177-bba5-ad572620bd0b" name="Changes" comment="Создал файлы контроллера и моделей&#10;&#10;Создал в БД нужные таблицы, прописал в моделях поля и методы, &#10;осталось только аннотации необходимые добавить">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/dao/BookDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/dao/PersonDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/util/PersonValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/new.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/0f4456c2-ae1e-427c-a6d3-b72f3a005860.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0f4456c2-ae1e-427c-a6d3-b72f3a005860.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cc4d0861-2685-492e-ae51-f2dc588704fe.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cc4d0861-2685-492e-ae51-f2dc588704fe/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cc4d0861-2685-492e-ae51-f2dc588704fe/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cc4d0861-2685-492e-ae51-f2dc588704fe/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/config/MySpringMvcDispatcherServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/config/MySpringMvcDispatcherServletInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/config/SpringConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/controllers/BooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/controllers/BooksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/controllers/PeopleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/models/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/models/Person.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +42,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -33,6 +54,13 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="2TUbzNJXLbpP8ZHschmSprxdRKg" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -47,10 +75,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/iv-to/IdeaProjects/string-web-app1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "b044201eb659bad2564a350ba7808e2f",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -157,7 +187,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1691100870391</updated>
-      <workItem from="1691100872961" duration="5317000" />
+      <workItem from="1691100872961" duration="5944000" />
+      <workItem from="1691155577470" duration="599000" />
+      <workItem from="1691223691111" duration="8290000" />
     </task>
     <task id="LOCAL-00001" summary="Внес базовую конфигурацию проекта.&#10;&#10;Подключил все нужные фреймворки в pom.xml,&#10;создал необходимые директории, настроил файлы конфигурации,&#10;подключил БД и удаленный сервер">
       <option name="closed" value="true" />
@@ -167,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691103334449</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Создал файлы контроллера и моделей&#10;&#10;Создал в БД нужные таблицы, прописал в моделях поля и методы, &#10;осталось только аннотации необходимые добавить">
+      <option name="closed" value="true" />
+      <created>1691106554439</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1691106554439</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +215,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Внес базовую конфигурацию проекта.&#10;&#10;Подключил все нужные фреймворки в pom.xml,&#10;создал необходимые директории, настроил файлы конфигурации,&#10;подключил БД и удаленный сервер" />
-    <option name="LAST_COMMIT_MESSAGE" value="Внес базовую конфигурацию проекта.&#10;&#10;Подключил все нужные фреймворки в pom.xml,&#10;создал необходимые директории, настроил файлы конфигурации,&#10;подключил БД и удаленный сервер" />
+    <MESSAGE value="Создал файлы контроллера и моделей&#10;&#10;Создал в БД нужные таблицы, прописал в моделях поля и методы, &#10;осталось только аннотации необходимые добавить" />
+    <option name="LAST_COMMIT_MESSAGE" value="Создал файлы контроллера и моделей&#10;&#10;Создал в БД нужные таблицы, прописал в моделях поля и методы, &#10;осталось только аннотации необходимые добавить" />
   </component>
 </project>

@@ -1,16 +1,24 @@
 package ru.pivan.models;
 
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
 public class Book {
 
-    //todo прописать валидацию
     private int id;
 
     private int person_id;
 
+    @NotEmpty(message = "Название не может быть пустым")
     private String name;
 
+    @Size(min = 1, max = 200, message = "Имя автора может включать до 200 символов")
     private String author;
 
+    @Min(value = 867, message = "Год не может быть меньше 867")
+    @Max(value = 2023, message = "Год не может быть больше 2023")
     private int publish_year;
 
     public Book(int id, int person_id, String name, String author, int publish_year) {

@@ -20,7 +20,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @ComponentScan("ru.pivan")
-@EnableWebMvc //todo вспомнить, чо делает эта аннотация
+@EnableWebMvc // штука, которую надо всегда писать. Она активирует компоненты связанные с веб разработкой.
 @PropertySource("classpath:database.properties")
 public class SpringConfig implements WebMvcConfigurer {
 

@@ -9,6 +9,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 //тут пока ваще фиг знает чо происходит. это конфигурация диспетчер сервлета, который преобразует данные из HTTP запроса
 //от пользователя в понятном для джавы виде + определяет, какой контроллер нужно вызвать.
 public class MySpringMvcDispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return null;
@@ -34,5 +35,4 @@ public class MySpringMvcDispatcherServletInitializer extends AbstractAnnotationC
         aContext.addFilter("hiddenHttpMethodFilter",
                 new HiddenHttpMethodFilter()).addMappingForUrlPatterns(null ,true, "/*");
     }
-
 }
