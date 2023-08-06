@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -12,8 +12,24 @@
 <p th:text="${book.getPublish_year()}">VALUE</p>
 
 <p>Кто взял книгу:</p>
-<p th:if="${reader}" th:text="${reader.full_name}"></p>
-<p th:unless="${reader}">Эта книга свободна</p>
+<div th:if="${reader}">
+    <p th:text="${reader.full_name}"></p>
+    <form th:method="PATCH" th:action="@{/books/{id}/release(id=${book.getId()})}">
+        <input type="submit" value="Освободить книгу">
+    </form>
+</div>
+
+<div th:unless="${reader}">
+    <p>Эта книга свободна</p>
+    <form th:method="PATCH" th:action="@{/books/{id}/add(id=${book.getId()})}">
+        <label for="person">Выбрать человека:</label>
+        <select th:object="${person}" th:field="*{id}" id="person">
+            <option th:each="person_item : ${people}" th:value="${person_item.getId()}"
+            th:text="${person_item.getFull_name()}"></option>
+        </select>
+        <input type="submit" value="Назначить книгу человеку">
+    </form>
+</div>
 
 <a th:href="@{/books/{id}/edit(id=${book.getId()})}">Изменить информацию о книге</a>
 
