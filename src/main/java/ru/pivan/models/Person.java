@@ -1,24 +1,37 @@
 package ru.pivan.models;
 
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.*;
 
+import java.util.*;
+
+@Entity
+@Table(name = "Person")
 public class Person {
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(name = "full_name")
     @NotEmpty(message = "Имя не может быть пустым")
     //Фамилия Имя Отчество
     //@Pattern(regexp = "[А-Я]\\w+, [А-Я]\\w+, [А-Я]\\w+")
-    private String full_name;
+    private String fullName;
 
+    @Column(name = "birth_year")
     @Min(value = 1910, message = "Год не может быть меньше 1910")
     @Max(value = 2023, message = "Год не может быть больше 2023")
-    private int birth_year;
+    private int birthYear;
 
-    public Person(int id, String full_name, int birth_year) {
-        this.id = id;
-        this.full_name = full_name;
-        this.birth_year = birth_year;
+    @OneToMany(mappedBy = "person")
+    private List<Book> books;
+
+    public Person(String fullName, int birthYear) {
+        this.fullName = fullName;
+        this.birthYear = birthYear;
     }
 
     public Person() {}
@@ -31,19 +44,35 @@ public class Person {
         this.id = id;
     }
 
-    public String getFull_name() {
-        return full_name;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFull_name(String full_name) {
-        this.full_name = full_name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public int getBirth_year() {
-        return birth_year;
+    public int getBirthYear() {
+        return birthYear;
     }
 
-    public void setBirth_year(int birth_year) {
-        this.birth_year = birth_year;
+    public void setBirthYear(int birthYear) {
+        this.birthYear = birthYear;
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "fullName='" + fullName + '\'' +
+                ", birthYear=" + birthYear +
+                '}';
     }
 }

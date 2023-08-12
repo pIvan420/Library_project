@@ -3,18 +3,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
-import ru.pivan.dao.PersonDAO;
 import ru.pivan.models.Person;
+import ru.pivan.services.PeopleServices;
 
 @Component
 public class PersonValidator implements Validator {
 
-    private final PersonDAO personDAO;
+    private final PeopleServices peopleServices;
 
     @Autowired
-    public PersonValidator(PersonDAO personDAO) {
-        this.personDAO = personDAO;
+    public PersonValidator(PeopleServices peopleServices) {
+        this.peopleServices = peopleServices;
     }
+
 
     @Override
     public boolean supports(Class<?> clazz) {
@@ -24,7 +25,7 @@ public class PersonValidator implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
         Person person = (Person) target;
-        if(personDAO.show(person.getFull_name()) != null){
+        if(peopleServices.findByFullName(person.getFullName()) != null){
             errors.rejectValue("full_name", "", "Это имя уже занято");
         }
     }

@@ -2,19 +2,19 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title th:text="${person.getFull_name()}">Человек</title>
+    <title th:text="${person.getFullName()}">Человек</title>
 </head>
 <body>
 
 <p th:text="${person.getId()}">VALUE</p>
-<p th:text="${person.getFull_name()}">VALUE</p>
-<p th:text="${person.getBirth_year()}">VALUE</p>
+<p th:text="${person.getFullName()}">VALUE</p>
+<p th:text="${person.getBirthYear()}">VALUE</p>
 
 <p>Взятые книги:</p>
-<div th:unless="${#lists.isEmpty(books)}" th:each="book: ${books}">
-    <p th:text="${book.getAuthor() + ', ' + book.getName() + ', ' + book.getPublish_year() + ' год'}">VALUE</p>
+<div th:unless="${#lists.isEmpty(person.getBooks())}" th:each="book: ${person.getBooks()}">
+    <p th:text="${book.getAuthor() + ', ' + book.getName() + ', ' + book.getPublishYear() + ' год'}">VALUE</p>
 </div>
-<p th:if="${#lists.isEmpty(books)}">Человек пока не взял ни одной книги</p>
+<p th:if="${#lists.isEmpty(person.getBooks())}">Человек пока не взял ни одной книги</p>
 
 <a th:href="@{/people/{id}/edit(id=${person.getId()})}">Изменить информацию о человеке</a>
 

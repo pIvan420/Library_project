@@ -7,35 +7,34 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import ru.pivan.dao.BookDAO;
-import ru.pivan.dao.PersonDAO;
 import ru.pivan.models.Book;
 import ru.pivan.models.Person;
+import ru.pivan.services.BooksServices;
+import ru.pivan.services.PeopleServices;
 
 @Controller
 @RequestMapping("/books")
 public class BooksController {
 
-    private final BookDAO bookDAO;
-    private final PersonDAO personDAO;
+    private final BooksServices booksServices;
+    private final PeopleServices peopleServices;
 
     @Autowired
-    public BooksController(BookDAO bookDAO, PersonDAO personDAO) {
-        this.bookDAO = bookDAO;
-        this.personDAO = personDAO;
+    public BooksController(BooksServices booksServices, PeopleServices peopleServices) {
+        this.booksServices = booksServices;
+        this.peopleServices = peopleServices;
     }
 
     @GetMapping() // отправляется запрос на страницу с книгами
     public String index(Model model){
-        model.addAttribute("books", bookDAO.index());
+        model.addAttribute("books", booksServices.findAll());
         return "books/index";
     }
 
     @GetMapping("/{id}") // отправляется запрос на страницу с книгой
     public String show(Model model, @ModelAttribute("person") Person person, @PathVariable("id") int id){
-        model.addAttribute("book", bookDAO.show(id));
-        model.addAttribute("reader", bookDAO.get_reader(id));
-        model.addAttribute("people", personDAO.index());
+        model.addAttribute("book", booksServices.findOne(id));
+        model.addAttribute("people", peopleServices.findAll());
         return "books/show";
     }
 
@@ -51,13 +50,13 @@ public class BooksController {
         if(bindingResult.hasErrors()){
             return "books/new";
         }
-        bookDAO.save(book);
+        booksServices.save(book);
         return "redirect:/books";
     }
 
     @GetMapping("/{id}/edit") // выполняется запрос на страницу с формой по изменению данных
     public String edit(Model model, @PathVariable("id") int id){
-        model.addAttribute("book", bookDAO.show(id));
+        model.addAttribute("book", booksServices.findOne(id));
         return "books/edit";
     }
 
@@ -67,25 +66,25 @@ public class BooksController {
         if(bindingResult.hasErrors()){
             return "books/edit";
         }
-        bookDAO.update(id, book);
+        booksServices.update(id, book);
         return "redirect:/books";
     }
 
     @DeleteMapping("/{id}") // выполняется delete запрос на страницу с id, происходит удаление
     public String delete(@PathVariable("id") int id){
-        bookDAO.delete(id);
+        booksServices.delete(id);
         return "redirect:/books";
     }
 
     @PatchMapping("/{id}/release")
     public String release(@PathVariable("id") int id){
-        bookDAO.release_book(id);
+        booksServices.releaseBook(id);
         return "redirect:/books";
     }
 
     @PatchMapping("/{id}/add")
     public String add(@ModelAttribute("person") Person person, @PathVariable("id") int id){
-        bookDAO.add(id, person.getId());
+        booksServices.add(id, person.getId());
         return "redirect:/books";
     }
 }

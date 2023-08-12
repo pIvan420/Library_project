@@ -1,32 +1,45 @@
 package ru.pivan.models;
 
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
+
+@Entity
+@Table(name = "Book")
 public class Book {
 
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private int person_id;
 
+    @ManyToOne
+    @JoinColumn(name = "person_id", referencedColumnName = "id")
+    private Person person;
+
+
+    @Column(name = "name")
     @NotEmpty(message = "Название не может быть пустым")
     private String name;
 
+    @Column(name = "author")
     @Size(min = 1, max = 200, message = "Имя автора может включать до 200 символов")
     private String author;
 
+
+    @Column(name = "publish_year")
     @Min(value = 867, message = "Год не может быть меньше 867")
     @Max(value = 2023, message = "Год не может быть больше 2023")
-    private int publish_year;
+    private int publishYear;
 
-    public Book(int id, int person_id, String name, String author, int publish_year) {
-        this.id = id;
-        this.person_id = person_id;
+    public Book(String name, String author, int publishYear) {
         this.name = name;
         this.author = author;
-        this.publish_year = publish_year;
+        this.publishYear = publishYear;
     }
 
     public Book() {}
@@ -39,12 +52,12 @@ public class Book {
         this.id = id;
     }
 
-    public int getPerson_id() {
-        return person_id;
+    public Person getPerson() {
+        return person;
     }
 
-    public void setPerson_id(int person_id) {
-        this.person_id = person_id;
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
     public String getName() {
@@ -63,11 +76,21 @@ public class Book {
         this.author = author;
     }
 
-    public int getPublish_year() {
-        return publish_year;
+    public int getPublishYear() {
+        return publishYear;
     }
 
-    public void setPublish_year(int publish_year) {
-        this.publish_year = publish_year;
+    public void setPublishYear(int publishYear) {
+        this.publishYear = publishYear;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "person=" + person +
+                ", name='" + name + '\'' +
+                ", author='" + author + '\'' +
+                ", publishYear=" + publishYear +
+                '}';
     }
 }
