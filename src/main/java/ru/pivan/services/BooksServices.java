@@ -1,5 +1,7 @@
 package ru.pivan.services;
 
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.pivan.models.Book;
@@ -22,6 +24,18 @@ public class BooksServices {
 
     public List<Book> findAll(){
         return booksRepository.findAll();
+    }
+
+    public List<Book> findAll(int page, int booksPerPage){
+        return booksRepository.findAll(PageRequest.of(page, booksPerPage)).getContent();
+    }
+
+    public List<Book> findAll(boolean sort){
+        return booksRepository.findAll(Sort.by("publishYear"));
+    }
+
+    public List<Book> findAll(int page, int booksPerPage, boolean sort){
+        return booksRepository.findAll(PageRequest.of(page, booksPerPage, Sort.by("publishYear"))).getContent();
     }
 
     public Book findOne(int id){

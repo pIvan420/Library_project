@@ -9,30 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="926e271d-5215-4177-bba5-ad572620bd0b" name="Changes" comment="Доделал бекэнд проекта. Добавил возможность назначить и забрать книгу.&#10;&#10;Реализовал выбор человека, которому достанется книга,&#10;Реализовал возврат книги человеком, все исправил в представлении,&#10;проект считаю завершенным.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/repositories/BooksRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/repositories/PeopleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/services/BooksServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/services/PeopleServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0f4456c2-ae1e-427c-a6d3-b72f3a005860.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0f4456c2-ae1e-427c-a6d3-b72f3a005860.xml" afterDir="false" />
+    <list default="true" id="926e271d-5215-4177-bba5-ad572620bd0b" name="Changes" comment="Изменил код для использования Spring Data JPA&#10;&#10;Изменил названия методов в моделях + поменял их в представлении,&#10;создал репозиторий и бизнес-логику, изменил конфигурацию под JPA,&#10;добавил зависимости в pom.xml, в контроллере оптимизировал передачу&#10;данных в модели.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/config/SpringConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/controllers/BooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/controllers/BooksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/controllers/PeopleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/dao/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/dao/BookDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/dao/PersonDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/models/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/models/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/util/PersonValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/util/PersonValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/new.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/services/BooksServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/services/BooksServices.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,27 +49,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/iv-to/IdeaProjects/string-web-app1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "b044201eb659bad2564a350ba7808e2f",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/iv-to/IdeaProjects/string-web-app1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;b044201eb659bad2564a350ba7808e2f&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ru.pivan.config" />
@@ -244,6 +224,7 @@
     <MESSAGE value="Создал файлы контроллера и моделей&#10;&#10;Создал в БД нужные таблицы, прописал в моделях поля и методы, &#10;осталось только аннотации необходимые добавить" />
     <MESSAGE value="Дописал представление для Book + подключил кириллицу" />
     <MESSAGE value="исправил ошибки + добавил кто и какие книги брал&#10;&#10;Дописал валидацию, исправил ошибку sql запроса на Book,&#10;исправил ошибку перехода на создание вместо обновления поля,&#10;когда пользователь не проходил валидуацию,&#10;добавил для книги поле, где показывает, кто ее взял,&#10;для человека добавил поле, какие он взял книги" />
-    <option name="LAST_COMMIT_MESSAGE" value="исправил ошибки + добавил кто и какие книги брал&#10;&#10;Дописал валидацию, исправил ошибку sql запроса на Book,&#10;исправил ошибку перехода на создание вместо обновления поля,&#10;когда пользователь не проходил валидуацию,&#10;добавил для книги поле, где показывает, кто ее взял,&#10;для человека добавил поле, какие он взял книги" />
+    <MESSAGE value="Изменил код для использования Spring Data JPA&#10;&#10;Изменил названия методов в моделях + поменял их в представлении,&#10;создал репозиторий и бизнес-логику, изменил конфигурацию под JPA,&#10;добавил зависимости в pom.xml, в контроллере оптимизировал передачу&#10;данных в модели." />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменил код для использования Spring Data JPA&#10;&#10;Изменил названия методов в моделях + поменял их в представлении,&#10;создал репозиторий и бизнес-логику, изменил конфигурацию под JPA,&#10;добавил зависимости в pom.xml, в контроллере оптимизировал передачу&#10;данных в модели." />
   </component>
 </project>
