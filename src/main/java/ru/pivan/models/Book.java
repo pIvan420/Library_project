@@ -6,6 +6,8 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
+import java.util.*;
+
 
 @Entity
 @Table(name = "Book")
@@ -35,6 +37,13 @@ public class Book {
     @Min(value = 867, message = "Год не может быть меньше 867")
     @Max(value = 2023, message = "Год не может быть больше 2023")
     private int publishYear;
+
+    @Column(name = "date_received")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dateReceived;
+
+    @Transient
+    private boolean isOverdue;
 
     public Book(String name, String author, int publishYear) {
         this.name = name;
@@ -82,6 +91,22 @@ public class Book {
 
     public void setPublishYear(int publishYear) {
         this.publishYear = publishYear;
+    }
+
+    public Date getDateReceived() {
+        return dateReceived;
+    }
+
+    public void setDateReceived(Date dateReceived) {
+        this.dateReceived = dateReceived;
+    }
+
+    public boolean isOverdue() {
+        return isOverdue;
+    }
+
+    public void setOverdue(boolean overdue) {
+        isOverdue = overdue;
     }
 
     @Override

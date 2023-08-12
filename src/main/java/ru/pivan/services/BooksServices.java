@@ -8,7 +8,9 @@ import ru.pivan.models.Book;
 import ru.pivan.repositories.BooksRepository;
 import ru.pivan.repositories.PeopleRepository;
 
+import java.time.LocalDateTime;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 @Service
 @Transactional(readOnly = true)
@@ -66,6 +68,7 @@ public class BooksServices {
     public void releaseBook(int id){
         booksRepository.findById(id).ifPresent(book -> {
             book.setPerson(null);
+            book.setDateReceived(null);
         });
     }
 
@@ -73,6 +76,7 @@ public class BooksServices {
     public void add(int id, int person_id){
         booksRepository.findById(id).ifPresent(book -> {
             book.setPerson(peopleRepository.findById(person_id).orElse(null));
+            book.setDateReceived(new Date());
         });
     }
 

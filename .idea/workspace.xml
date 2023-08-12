@@ -9,16 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="926e271d-5215-4177-bba5-ad572620bd0b" name="Changes" comment="Добавил пагинацию и сортировку в бизнес-логике и контроллере">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/search.html" afterDir="false" />
+    <list default="true" id="926e271d-5215-4177-bba5-ad572620bd0b" name="Changes" comment="Добавил поиск книг по префиксу&#10;&#10;Добавил новое представление search.html, скорректировал прочие представления, изменил вызов связанных сущностей в PeopleServices,&#10;сделал необходимые методы для поиска книг в классах Book">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0f4456c2-ae1e-427c-a6d3-b72f3a005860.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0f4456c2-ae1e-427c-a6d3-b72f3a005860.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0f4456c2-ae1e-427c-a6d3-b72f3a005860/storage_v2/_src_/database/library.uyToCQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0f4456c2-ae1e-427c-a6d3-b72f3a005860/storage_v2/_src_/database/library.uyToCQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/controllers/BooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/controllers/BooksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/repositories/BooksRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/repositories/BooksRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/models/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/services/BooksServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/services/BooksServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/services/PeopleServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/services/PeopleServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,6 +184,7 @@
       <workItem from="1691313775619" duration="8175000" />
       <workItem from="1691774003618" duration="7677000" />
       <workItem from="1691826805331" duration="6861000" />
+      <workItem from="1691869544265" duration="4784000" />
     </task>
     <task id="LOCAL-00001" summary="Внес базовую конфигурацию проекта.&#10;&#10;Подключил все нужные фреймворки в pom.xml,&#10;создал необходимые директории, настроил файлы конфигурации,&#10;подключил БД и удаленный сервер">
       <option name="closed" value="true" />
@@ -228,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691845940662</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Добавил поиск книг по префиксу&#10;&#10;Добавил новое представление search.html, скорректировал прочие представления, изменил вызов связанных сущностей в PeopleServices,&#10;сделал необходимые методы для поиска книг в классах Book">
+      <option name="closed" value="true" />
+      <created>1691861508955</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1691861508955</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,6 +247,7 @@
     <MESSAGE value="исправил ошибки + добавил кто и какие книги брал&#10;&#10;Дописал валидацию, исправил ошибку sql запроса на Book,&#10;исправил ошибку перехода на создание вместо обновления поля,&#10;когда пользователь не проходил валидуацию,&#10;добавил для книги поле, где показывает, кто ее взял,&#10;для человека добавил поле, какие он взял книги" />
     <MESSAGE value="Изменил код для использования Spring Data JPA&#10;&#10;Изменил названия методов в моделях + поменял их в представлении,&#10;создал репозиторий и бизнес-логику, изменил конфигурацию под JPA,&#10;добавил зависимости в pom.xml, в контроллере оптимизировал передачу&#10;данных в модели." />
     <MESSAGE value="Добавил пагинацию и сортировку в бизнес-логике и контроллере" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил пагинацию и сортировку в бизнес-логике и контроллере" />
+    <MESSAGE value="Добавил поиск книг по префиксу&#10;&#10;Добавил новое представление search.html, скорректировал прочие представления, изменил вызов связанных сущностей в PeopleServices,&#10;сделал необходимые методы для поиска книг в классах Book" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил поиск книг по префиксу&#10;&#10;Добавил новое представление search.html, скорректировал прочие представления, изменил вызов связанных сущностей в PeopleServices,&#10;сделал необходимые методы для поиска книг в классах Book" />
   </component>
 </project>

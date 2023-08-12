@@ -3,10 +3,12 @@ package ru.pivan.services;
 import org.hibernate.Hibernate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.pivan.models.Book;
 import ru.pivan.models.Person;
 import ru.pivan.repositories.PeopleRepository;
 
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 @Service
 @Transactional(readOnly = true)
@@ -24,7 +26,14 @@ public class PeopleServices {
 
     public Person findOne(int id){
         Optional<Person> person = peopleRepository.findById(id);
-        person.ifPresent(value -> Hibernate.initialize(value.getBooks()));
+        person.ifPresent(p -> {
+            Hibernate.initialize(p.getBooks());
+            for (Book b: p.getBooks()) {
+                int daysPassed = (int) TimeUnit.MILLISECONDS.toDays(
+                    (new Date()).getTime() - b.getDateReceived().getTime());
+                b.setOverdue(daysPassed > 10);
+            }
+        });
         return person.orElse(null);
     }
 
