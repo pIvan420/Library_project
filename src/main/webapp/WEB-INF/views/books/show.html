@@ -10,7 +10,7 @@
 <p th:text="${book.getName()}">VALUE</p>
 <p th:text="${book.getAuthor()}">VALUE</p>
 <p th:text="${book.getPublishYear()}">VALUE</p>
-
+<hr/>
 <p>Кто взял книгу:</p>
 <div th:if="${book.getPerson()}">
     <p th:text="${book.getPerson().fullName}"></p>

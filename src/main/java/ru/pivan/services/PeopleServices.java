@@ -1,5 +1,6 @@
 package ru.pivan.services;
 
+import org.hibernate.Hibernate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.pivan.models.Person;
@@ -22,9 +23,9 @@ public class PeopleServices {
     }
 
     public Person findOne(int id){
-        Person person = peopleRepository.findById(id).orElse(null);
-        System.out.println(person.getBooks());
-        return person;
+        Optional<Person> person = peopleRepository.findById(id);
+        person.ifPresent(value -> Hibernate.initialize(value.getBooks()));
+        return person.orElse(null);
     }
 
     public Person findByFullName(String fullName){

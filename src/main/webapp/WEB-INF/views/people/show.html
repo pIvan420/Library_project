@@ -9,15 +9,16 @@
 <p th:text="${person.getId()}">VALUE</p>
 <p th:text="${person.getFullName()}">VALUE</p>
 <p th:text="${person.getBirthYear()}">VALUE</p>
-
+<hr/>
 <p>Взятые книги:</p>
 <div th:unless="${#lists.isEmpty(person.getBooks())}" th:each="book: ${person.getBooks()}">
     <p th:text="${book.getAuthor() + ', ' + book.getName() + ', ' + book.getPublishYear() + ' год'}">VALUE</p>
+    <hr/>
 </div>
 <p th:if="${#lists.isEmpty(person.getBooks())}">Человек пока не взял ни одной книги</p>
-
+<hr/>
 <a th:href="@{/people/{id}/edit(id=${person.getId()})}">Изменить информацию о человеке</a>
-
+<hr/>
 <form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
     <input type="submit" value="Удалить человека">
 </form>

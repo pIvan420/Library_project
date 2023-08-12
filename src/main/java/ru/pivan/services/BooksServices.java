@@ -38,6 +38,10 @@ public class BooksServices {
         return booksRepository.findAll(PageRequest.of(page, booksPerPage, Sort.by("publishYear"))).getContent();
     }
 
+    public List<Book> findByNameStartingWith(String prefix){
+        return booksRepository.findByNameStartingWith(prefix);
+    }
+
     public Book findOne(int id){
         return booksRepository.findById(id).orElse(null);
     }

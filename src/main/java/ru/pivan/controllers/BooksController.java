@@ -12,6 +12,8 @@ import ru.pivan.models.Person;
 import ru.pivan.services.BooksServices;
 import ru.pivan.services.PeopleServices;
 
+import java.util.ArrayList;
+
 @Controller
 @RequestMapping("/books")
 public class BooksController {
@@ -99,6 +101,18 @@ public class BooksController {
     public String add(@ModelAttribute("person") Person person, @PathVariable("id") int id){
         booksServices.add(id, person.getId());
         return "redirect:/books";
+    }
+
+    @GetMapping("/search")
+    public String search(Model model){
+        model.addAttribute("book", new Book());
+        return "/books/search";
+    }
+
+    @PostMapping("/search")
+    public String searchResult(Model model, @ModelAttribute("book") Book book){
+        model.addAttribute("books", booksServices.findByNameStartingWith(book.getName()));
+        return "/books/search";
     }
 }
 

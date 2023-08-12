@@ -9,10 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="926e271d-5215-4177-bba5-ad572620bd0b" name="Changes" comment="Изменил код для использования Spring Data JPA&#10;&#10;Изменил названия методов в моделях + поменял их в представлении,&#10;создал репозиторий и бизнес-логику, изменил конфигурацию под JPA,&#10;добавил зависимости в pom.xml, в контроллере оптимизировал передачу&#10;данных в модели.">
+    <list default="true" id="926e271d-5215-4177-bba5-ad572620bd0b" name="Changes" comment="Добавил пагинацию и сортировку в бизнес-логике и контроллере">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/controllers/BooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/controllers/BooksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/repositories/BooksRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/repositories/BooksRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/services/BooksServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/services/BooksServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/pivan/services/PeopleServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/pivan/services/PeopleServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +29,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -213,7 +220,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691254165018</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Добавил пагинацию и сортировку в бизнес-логике и контроллере">
+      <option name="closed" value="true" />
+      <created>1691845940662</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1691845940662</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +240,7 @@
     <MESSAGE value="Дописал представление для Book + подключил кириллицу" />
     <MESSAGE value="исправил ошибки + добавил кто и какие книги брал&#10;&#10;Дописал валидацию, исправил ошибку sql запроса на Book,&#10;исправил ошибку перехода на создание вместо обновления поля,&#10;когда пользователь не проходил валидуацию,&#10;добавил для книги поле, где показывает, кто ее взял,&#10;для человека добавил поле, какие он взял книги" />
     <MESSAGE value="Изменил код для использования Spring Data JPA&#10;&#10;Изменил названия методов в моделях + поменял их в представлении,&#10;создал репозиторий и бизнес-логику, изменил конфигурацию под JPA,&#10;добавил зависимости в pom.xml, в контроллере оптимизировал передачу&#10;данных в модели." />
-    <option name="LAST_COMMIT_MESSAGE" value="Изменил код для использования Spring Data JPA&#10;&#10;Изменил названия методов в моделях + поменял их в представлении,&#10;создал репозиторий и бизнес-логику, изменил конфигурацию под JPA,&#10;добавил зависимости в pom.xml, в контроллере оптимизировал передачу&#10;данных в модели." />
+    <MESSAGE value="Добавил пагинацию и сортировку в бизнес-логике и контроллере" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил пагинацию и сортировку в бизнес-логике и контроллере" />
   </component>
 </project>
